@@ -27,6 +27,7 @@ def main():
     file_transfer(X)
     close_server_connection(cursor, connection)
 
+# Profiler + run
 if path.isfile('profiler.py'):
     from profiler import go
     go()
