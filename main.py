@@ -1,4 +1,5 @@
-from os                                     import chdir, path
+"""Libraries"""
+from os                                     import chdir,path
 from py_scripts.server_connection           import server_connection
 from py_scripts.find_early_date             import find_early_date
 from py_scripts.load_data_from_terminals    import load_data_from_terminals
@@ -13,6 +14,7 @@ from py_scripts.file_transfer               import file_transfer
 from py_scripts.close_server_connection     import close_server_connection
 
 def main():
+    """run ETL process"""
     cursor, connection = server_connection()
     chdir('/home/demipt/yupi')
     X, date = find_early_date()
