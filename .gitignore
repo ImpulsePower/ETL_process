@@ -1,5 +1,6 @@
 *.xlsx
 *.txt
 profiler.py
-.vscode
-__pycache__
+profile.dmp
+.vscode/
+__pycache__/
