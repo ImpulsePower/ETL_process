@@ -67,6 +67,7 @@ The structure of the project is shown below:
 * DROP_TABLE.sql                : Supporting DDL SQL query  
 * INCREMENTAL.sql               : ETL process with SCD
 
-main.py                         : The main script
-main.cron                       : Task file for linux machine
-profiler.py                     : Script for profiling
+=========================
+* main.py                         : The main script
+* main.cron                       : Task file for linux machine
+* profiler.py                     : Script for profiling
