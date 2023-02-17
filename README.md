@@ -2,29 +2,35 @@
 ETL process based on Slowly Changing Dimension (SCD) MIPT (2021)
 
 ## Introduction
+================
 
 This project implements an example extract, transform, load (ETL) process that simulates a transfer layer 
-with incremental change commit function (SCD) from OLTP systems to OLAP. 
-The purpose of the work is a small simulation of a banking system with one DWH and a group of ATMs. The OLTP 
-load is the source files ("flat files") with three types of data: a list of transactions, a list of ATMs, and 
-a blacklist of passports. 
-Server with installed and configured Oracle DBMS with a list of bank clients and their bank cards acts as OLAP. 
+with incremental change commit function (SCD) from OLTP systems to OLAP. The purpose of the work is a small 
+simulation of a banking system with one DWH and a group of ATMs. 
+
+The OLTP load is the source files ("flat files") with three types of data: a list of transactions, a list of ATMs, and 
+a blacklist of passports. Server with installed and configured Oracle DBMS with a list of bank clients and their bank 
+cards acts as OLAP.
+
 With the fixing of changes of OLTP load the search of bank fraud transactions takes place with the formation of 
 the appropriate report. The fixing of changes and the formation of the report takes place every 
 24 hours, a cron-file is written to implement this.
 
 ## Software Requirements
+========================
 
 * Linux server with configured Oracle DBMS 
 * Python 3.4+ with jaydebeapi
 
 ## How is it run?
+=================
 
 To simulate bank operation, users must be pre-loaded on the DWH server to implement the following ER-model:
 ![ER-model](ER_model.PNG)
 Everything else will do for you written script ETL process and generate a report on the server of fraudulent transactions
 
 ## Project Stages
+=================
 
 The work of the script can be divided into several stages:
 1. The jaydebeapi library is used to declare a cursor to connect to the database
@@ -39,8 +45,13 @@ The work of the script can be divided into several stages:
 10. Closing the database connection
 
 ## Structure of project
+=======================
 
 The structure of the project is shown below:
+
+* main.py                         : The main script
+* main.cron                       : Task file for linux machine
+* profiler.py                     : Script for profiling
 
 /archive                        : For worked files
 
@@ -66,8 +77,3 @@ The structure of the project is shown below:
 * DDL_STG.sql                   : Forming a staging table
 * DROP_TABLE.sql                : Supporting DDL SQL query  
 * INCREMENTAL.sql               : ETL process with SCD
-
-=========================
-* main.py                         : The main script
-* main.cron                       : Task file for linux machine
-* profiler.py                     : Script for profiling
