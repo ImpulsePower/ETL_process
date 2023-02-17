@@ -1,4 +1,4 @@
-"""Libraries"""
+'''Python Libraries'''
 from os import chdir, path
 
 from py_scripts.server_connection           import server_connection
@@ -15,7 +15,7 @@ from py_scripts.report_3                    import report_3
 from py_scripts.report_4                    import report_4
 
 def main():
-    """run ETL process"""
+    '''run ETL process'''
     chdir('/home/demipt/yupi')
     cursor, connection = server_connection()
     way, date = find_early_date()

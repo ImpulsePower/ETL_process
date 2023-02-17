@@ -1,5 +1,6 @@
-# Построение отчёта
+'''Task_1'''
 def report_1(curs, DT):
+    '''Building a report on task_1'''
     curs.execute(('''insert into DEMIPT.YUPI_REP_FRAUD( EVENT_DT, PASSPORT, FIO, PHONE,EVENT_TYPE, REPORT_DT )
     select
     	min(t4.TRANS_DATE),
@@ -14,4 +15,4 @@ def report_1(curs, DT):
     left join DEMIPT.YUPI_DWH_FACT_TRANSACTIONS t4 on t3.CARD_NUM = t4.CARD_NUM and TRANS_DATE BETWEEN to_date( '{}', 'YYYY-MM-DD' ) and to_date( '{}', 'YYYY-MM-DD' ) + interval '1' day
     left join DEMIPT.YUPI_DWH_FACT_PSSPRT_BLCKLST t5 on t1.PASSPORT_NUM = t5.PASSPORT_NUM
     where t1.PASSPORT_VALID_TO < to_date( '{}', 'YYYY-MM-DD' ) + interval '1' day or t1.PASSPORT_NUM = t5.PASSPORT_NUM
-    group by t1.PASSPORT_NUM''').format(DT,DT,DT,DT))
+    group by t1.PASSPORT_NUM''').format(DT, DT, DT, DT))

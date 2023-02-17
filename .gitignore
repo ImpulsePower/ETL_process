@@ -1,6 +1,6 @@
 *.xlsx
 *.txt
-profiler.py
+
 profile.dmp
 .vscode/
 __pycache__/

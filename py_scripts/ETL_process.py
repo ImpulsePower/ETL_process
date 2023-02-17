@@ -1,5 +1,5 @@
-# ETL
 def ETL_process(curs):
-    inc = open('sql_scripts/INCREMENTAL.sql','r').read().split(";")
-    for i in inc:
-    	curs.execute( i )
+    '''main ETL process'''
+    with open('sql_scripts/INCREMENTAL.sql','r').read().split(";") as inc:
+        for i in inc:
+        	curs.execute( i )

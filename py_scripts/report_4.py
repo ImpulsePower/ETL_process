@@ -1,4 +1,6 @@
+'''Task_4'''
 def report_4(curs, DT):
+    '''Building a report on task_4'''
     curs.execute(('''insert into DEMIPT.YUPI_REP_FRAUD( EVENT_DT, PASSPORT, FIO, PHONE,EVENT_TYPE, REPORT_DT )
     select
     	TD,

@@ -1,5 +1,5 @@
-"""Final step"""
+'''Final step'''
 def close_server_connection(curs,conn):
-    """Закрытие соединения"""
+    '''Close connection'''
     curs.close()
     conn.close()

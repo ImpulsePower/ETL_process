@@ -1,8 +1,9 @@
-import jaydebeapi as jdba
+"""Python Libraries"""
+from jaydebeapi import connect
 
-# Установка соединения с сервером
 def server_connection():
-    conn = jdba.connect(
+    '''Establishing a connection to the server'''
+    conn = connect(
     'oracle.jdbc.driver.OracleDriver',
     'jdbc:oracle:thin:user/password@de-oracle.chronosavant.ru:1521/deoracle',
     ['user','password'],
