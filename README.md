@@ -21,7 +21,7 @@ the appropriate report. The fixing of changes and the formation of the report ta
 ## How is it run?
 
 To simulate bank operation, users must be pre-loaded on the DWH server to implement the following ER-model:
-![ER-model](ER_model.png)
+![ER-model](ER_model.PNG)
 Everything else will do for you written script ETL process and generate a report on the server of fraudulent transactions
 
 ## Project Stages
